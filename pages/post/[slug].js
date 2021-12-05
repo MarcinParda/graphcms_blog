@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from "next/router";
 
 import { getPosts, getPostDetails } from '/services';
 import PostDetail from "/components/PostDetail";
@@ -7,8 +8,13 @@ import CommentsForm from "/components/CommentsForm";
 import Comments from "/components/Comments";
 import PostWidget from "/components/PostWidget";
 import Categories from "/components/Categories";
+import Loader from "components/Loader";
 
 const PostDetails = ({ post }) => {
+  const router = useRouter();
+  if(router.isFallback) {
+    return <Loader />
+  }
 
   return (
     <>
