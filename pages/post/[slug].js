@@ -8,7 +8,7 @@ import CommentsForm from "/components/CommentsForm";
 import Comments from "/components/Comments";
 import PostWidget from "/components/PostWidget";
 import Categories from "/components/Categories";
-import Loader from "components/Loader";
+import Loader from "/components/Loader";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
