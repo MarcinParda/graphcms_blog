@@ -63,3 +63,42 @@ a {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
+.post {
+  h1 {
+    @apply text-3xl font-bold mb-4 mt-6
+  }
+  h2 {
+    @apply text-2xl font-bold mb-4 mt-6
+  }
+  h3 {
+    @apply text-xl font-bold my-4
+  }
+  p {
+    @apply my-4
+  }
+  img {
+    @apply rounded-lg mt-4
+  }
+  ul {
+    list-style-type: circle;
+    @apply ml-2 pl-3
+  }
+  a {
+    @apply hover:underline text-blue-600
+  }
+  pre {
+    code {
+      code {
+        font-family: monospace;
+        @apply rounded-lg bg-gray-700 text-white block p-6
+      }
+    }
+  }
+  .image-description {
+    p {
+      @apply p-0 m-0 mt-1 text-gray-500
+    }
+    @apply text-center
+  }
+}

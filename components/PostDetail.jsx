@@ -3,59 +3,6 @@ import React from 'react';
 import moment from 'moment';
 
 const PostDetail = ({ post }) => {
-  const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
-    if (obj) {
-      if (obj.bold) {
-        modifiedText = (<b key={index}>{text}</b>);
-      }
-
-      if (obj.italic) {
-        modifiedText = (<em key={index}>{text}</em>);
-      }
-
-      if (obj.underline) {
-        modifiedText = (<u key={index}>{text}</u>);
-      }
-
-      if (obj.href) {
-        console.log(obj)
-        modifiedText = (<a className="hover:underline text-blue-500" target={obj.openInNewTab ? "_blank" : ""} href={obj.href} key={index}>{obj.children[0].text}</a>);
-      }
-    }
-
-    switch (type) {
-      case 'heading-one':
-        return <h1 key={index} className="text-xxxl font-semibold mb-4 mt-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h1>;
-      case 'heading-two':
-        return <h2 key={index} className="text-xxl font-semibold mb-4 mt-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>;
-      case 'heading-three':
-        return <h3 key={index} className="text-xl font-semibold mb-4 mt-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
-      case 'heading-four':
-        return <h4 key={index} className="text-md font-semibold mb-4 mt-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
-      case 'paragraph':
-        return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
-      case 'image':
-        return (
-          <div className="mb-4 mt-4">
-            <img
-              className="rounded-md mb-1"
-              key={index}
-              alt={obj.title}
-              height={obj.height}
-              width={obj.width}
-              src={obj.src}
-            />
-            <p className="text-center text-gray-500">{obj.altText}</p>
-          </div>
-        );
-      case 'bulleted-list':
-        return <ul key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</ul>
-      default:
-        return modifiedText;
-    }
-  };
-
   return (
     <>
       <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
@@ -82,12 +29,7 @@ const PostDetail = ({ post }) => {
             </div>
           </div>
           <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-          <div className="post">
-            {post.content.raw.children.map((typeObj, index) => {
-              const children = typeObj.children.map((item, itemindex) => getContentFragment(itemindex, item.text, item));
-              return getContentFragment(index, children, typeObj, typeObj.type);
-            })}
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: post.content.html }} className="post" />
         </div>
       </div>
 
