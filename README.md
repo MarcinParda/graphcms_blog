@@ -21,5 +21,3 @@
 - Add paginator when there are more than 10 post on one page
 - Add search bar to look for certain post
 - Add dark mode
-- Change background and layout a bit
-- Change font of the page
