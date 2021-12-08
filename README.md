@@ -1,5 +1,5 @@
 # Programaniak Blog
-## U can watch it live [HERE](https://graphcms-blog-mvze9i85s-marcinparda.vercel.app/)
+## U can watch it live [HERE](https://graphcms-blog-phi.vercel.app/)
 
 **_Built using Next.js, GraphCMS, GraphQL, TailwindCSS_**
 
