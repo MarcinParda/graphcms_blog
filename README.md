@@ -15,9 +15,9 @@
 - Filtering posts by categories
 - Mobile responsiveness
 
-## Future Plans
+## Fuctionalities to implement
 
-- Add popups for confirm sending post
-- Add paginator when there are more than 10 post on one page
-- Add search bar to look for certain post
-- Add dark mode
+- [ ] Popups for confirm sending post
+- [ ] Paginator when there are more than 10 post on one page
+- [ ] Search bar to look for certain post
+- [ ] Dark mode
