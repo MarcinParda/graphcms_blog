@@ -1,7 +1,7 @@
 # Programaniak Blog
 ## U can watch it live [HERE](https://graphcms-blog-phi.vercel.app/)
 
-![Project preview](https://cdn.discordapp.com/attachments/917864818189418576/918566121572016158/unknown.png)
+![Project preview](https://cdn.discordapp.com/attachments/917864818189418576/918242910229647430/unknown.png)
 
 **_Built using Next.js, GraphCMS, GraphQL, TailwindCSS_**
 
