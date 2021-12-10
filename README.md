@@ -1,6 +1,7 @@
 # Programaniak Blog
-## U can watch it live [HERE](https://graphcms-blog-mvze9i85s-marcinparda.vercel.app/)
+## U can watch it live [HERE](https://graphcms-blog-phi.vercel.app/)
 
+![Project preview](https://cdn.discordapp.com/attachments/917864818189418576/918242910229647430/unknown.png)
 **_Built using Next.js, GraphCMS, GraphQL, TailwindCSS_**
 
 ## Features and Fuctionality
@@ -13,11 +14,10 @@
 - Filtering posts by categories
 - Mobile responsiveness
 
-## Future Plans
+## Fuctionalities to implement
 
-- Add popups for confirm sending post
-- Add paginator when there are more than 10 post on one page
-- Add search bar to look for certain post
-- Add dark mode
-- Change background and layout a bit
-- Change font of the page
+- [ ] Rewrite to typescript
+- [ ] Popups for confirm sending post
+- [ ] Paginator when there are more than 10 post on one page
+- [ ] Search bar to look for certain post
+- [ ] Dark mode
