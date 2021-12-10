@@ -7,7 +7,7 @@ import FeaturedPosts from "/sections/FeaturedPosts";
 
 export default function Home({ posts }) {
   return (
-    <div className="dark container mx-auto px-10 mb-8">
+    <div className="container mx-auto px-10 mb-8">
       <Head>
         <title>Programaniak</title>
         <link rel="icon" href="/public/face.png" />

@@ -82,7 +82,7 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <div className="bg-white dark:bg-gray-900 dark:text-gray-100 shadow-lg rounded-lg p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea value={formData.comment} onChange={onInputChange} className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" name="comment" placeholder="Comment" />
@@ -99,7 +99,7 @@ const CommentsForm = ({ slug }) => {
       </div>
       {error && <p className="text-xs text-red-500">All fields are mandatory</p>}
       <div className="mt-8">
-        <button type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-blue-600 inline-block bg-green-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Post Comment</button>
+        <button type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-blue-600 dark:hover:bg-blue-500 inline-block bg-green-600 dark:bg-green-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Post Comment</button>
       </div>
       <ToastContainer position="bottom-left" theme="colored" />
     </div>
