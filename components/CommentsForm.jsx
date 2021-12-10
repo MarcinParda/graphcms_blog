@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { submitComment } from '/services';
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
+const successNotify = () => toast.success("Comment submitted for review");
+const errorNotify = () => toast.error("Your comment didn't submit correctly");
+const formErrorNotify = () => toast.error("There is an error in the post form");
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', comment: '', storeData: false });
 
   useEffect(() => {
     setLocalStorage(window.localStorage);
-    const initalFormData = {
+    const initialFormData = {
       name: window.localStorage.getItem('name'),
       email: window.localStorage.getItem('email'),
       storeData: window.localStorage.getItem('name') || window.localStorage.getItem('email'),
     };
-    setFormData(initalFormData);
+    setFormData(initialFormData);
   }, []);
 
   const onInputChange = (e) => {
@@ -37,6 +43,7 @@ const CommentsForm = ({ slug }) => {
     const { name, email, comment, storeData } = formData;
     if (!name || !email || !comment) {
       setError(true);
+      formErrorNotify();
       return;
     }
     const commentObj = {
@@ -66,12 +73,12 @@ const CommentsForm = ({ slug }) => {
             ...prevState,
             ...formData,
           }));
-          setShowSuccessMessage(true);
-          setTimeout(() => {
-            setShowSuccessMessage(false);
-          }, 3000);
+          successNotify();
         }
-      });
+      }).catch(() => {
+        errorNotify();
+    })
+    ;
   };
 
   return (
@@ -93,8 +100,8 @@ const CommentsForm = ({ slug }) => {
       {error && <p className="text-xs text-red-500">All fields are mandatory</p>}
       <div className="mt-8">
         <button type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-blue-600 inline-block bg-green-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Post Comment</button>
-        {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">Comment submitted for review</span>}
       </div>
+      <ToastContainer position="bottom-left" theme="colored" />
     </div>
   );
 };
