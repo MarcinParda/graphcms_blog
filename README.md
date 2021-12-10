@@ -16,6 +16,7 @@
 
 ## Fuctionalities to implement
 
+- [ ] Rewrite to typescript
 - [ ] Popups for confirm sending post
 - [ ] Paginator when there are more than 10 post on one page
 - [ ] Search bar to look for certain post
