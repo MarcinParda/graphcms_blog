@@ -74,6 +74,9 @@ a {
   h3 {
     @apply text-xl font-bold my-4
   }
+  h4 {
+    @apply text-lg font-bold my-4
+  }
   p {
     @apply my-4
   }
@@ -100,5 +103,14 @@ a {
       @apply p-0 m-0 mt-1 text-gray-500
     }
     @apply text-center
+  }
+
+  .warning-block {
+    &:before {
+      content: '';
+      background: url('https://cdn.discordapp.com/attachments/917864818189418576/919287014069764126/unknown.png');
+      @apply w-10 h-10 absolute bg-cover -ml-12 mt-2
+    }
+    @apply bg-orange-400 p-3 pl-16 rounded-2xl
   }
 }
