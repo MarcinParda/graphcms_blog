@@ -16,7 +16,7 @@
 
 ## Fuctionalities to implement
 
-- [ ] Fix header responsivity
+- [x] Fix header responsivity
 - [ ] Rewrite to typescript
 - [x] Popups for confirm sending post
 - [ ] Paginator when there are more than 10 post on one page
